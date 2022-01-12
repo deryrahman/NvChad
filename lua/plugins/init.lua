@@ -134,6 +134,9 @@ return packer.startup(function()
       disable = not plugin_settings.status.cmp,
       after = "friendly-snippets",
       config = override_req("nvim_cmp", "plugins.configs.cmp"),
+      -- source = {
+      --    { name = "neorg" },
+      -- },
    }
 
    use {
@@ -216,8 +219,13 @@ return packer.startup(function()
 
    use {
       "nvim-telescope/telescope.nvim",
-      cmd = "Telescope",
+      -- cmd = "Telescope",
       config = override_req("telescope", "plugins.configs.telescope"),
+      commit = "c5aad43558959ed6491c6c7cddf657b52a38be2d",
+      requires = {
+         { "nvim-lua/plenary.nvim" },
+         { "nvim-telescope/telescope-github.nvim" },
+      },
       setup = function()
          require("core.mappings").telescope()
       end,

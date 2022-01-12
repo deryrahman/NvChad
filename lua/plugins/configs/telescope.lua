@@ -53,7 +53,7 @@ telescope.setup {
    },
 }
 
-local extensions = { "themes", "terms" }
+local extensions = { "themes", "terms", "gh" }
 
 pcall(function()
    for _, ext in ipairs(extensions) do
